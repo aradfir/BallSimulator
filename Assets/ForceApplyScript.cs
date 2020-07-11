@@ -16,9 +16,9 @@ public class ForceApplyScript : MonoBehaviour
         rb.drag = 0;
         
         
-        BallType = new BallType("red", Color.red, 0.01f);
-        BallType.Radius = 0.2f;
-        BallType.Forces.Add(BallType, Relation.GetRandomRelation(BallType, BallType, 1500f, 100f));
+     //   BallType = new BallType("red", Color.red, 0.01f);
+     //   BallType.Radius = 0.2f;
+     //   BallType.Forces.Add(BallType, Relation.GetRandomRelation(BallType, BallType, 1500f, 100f));
         GetComponent<SpriteRenderer>().color = ballType.Color;
         transform.localScale *= BallType.Radius*2;
     }
@@ -27,7 +27,7 @@ public class ForceApplyScript : MonoBehaviour
     void Update()
     {
         GameObject[] gobj=GameObject.FindGameObjectsWithTag("ball");
-        rb.velocity *= (1 - ballType.FrictionMult);
+        rb.velocity *= (1 - ballType.FrictionMult)*Time.deltaTime*Time.timeScale;
         //Debug.LogError(gobj.Length);
         foreach (GameObject otherBall in gobj)
         {
@@ -48,11 +48,11 @@ public class ForceApplyScript : MonoBehaviour
             Debug.Log(force);
             if(relationOfBalls.Attract)
             {
-                rb.AddForce(diff.normalized* force*Time.deltaTime);
+                rb.AddForce(diff.normalized* force*Time.deltaTime* Time.timeScale);
             }
             else
             {
-                rb.AddForce(-diff.normalized * force* Time.deltaTime);
+                rb.AddForce(-diff.normalized * force* Time.deltaTime* Time.timeScale);
             }
             
         }

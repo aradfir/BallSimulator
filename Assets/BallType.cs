@@ -20,20 +20,16 @@ namespace Assets
         public string Name { get => name; set => name = value; }
         internal Dictionary<BallType, Relation> Forces { get => forces; set => forces = value; }
 
-        public BallType(string name, Color color, float frictionMult, Dictionary<BallType,Relation> forces)
+        public BallType(string name, Color color, float frictionMult, Dictionary<BallType,Relation> forces, float radius = 0.2f)
         {
             this.name = name;
             this.color = color;
             this.frictionMult = frictionMult;
             this.forces = forces;
+            this.radius = radius;
+           
         }
-        public BallType(string name, Color color, float frictionMult)
-        {
-            this.name = name;
-            this.color = color;
-            this.frictionMult = frictionMult;
-            this.forces = new Dictionary<BallType, Relation>();
-        }
+
 
         public override bool Equals(object obj)
         {
