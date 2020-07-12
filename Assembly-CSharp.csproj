@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\BallSpawner.cs" />
     <Compile Include="Assets\BallType.cs" />
+    <Compile Include="Assets\CameraMoveScript.cs" />
     <Compile Include="Assets\ForceApplyScript.cs" />
     <Compile Include="Assets\Relation.cs" />
     <Reference Include="Unity.Timeline.Editor">

@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BallSpawner
+    - CameraMoveScript
     - ForceApplyScript
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -48,9 +49,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12454}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 24450}
+      Script: {instanceID: 12456}
+    - Class: 114
+      Script: {instanceID: 13826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -260,6 +263,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 87805799bf05b40cb5cc2649fa3d610e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallSpawner
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -490,10 +499,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 87805799bf05b40cb5cc2649fa3d610e
+      Hash: 698d6a21eac6a187902a21a498fd9dba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BallSpawner
+    className: CameraMoveScript
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
