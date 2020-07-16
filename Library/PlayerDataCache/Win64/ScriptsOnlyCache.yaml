@@ -611,4 +611,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/madeGames/ballSimulator/bin/Ball Simulations.exe
+  playerPath: D:/madeGames/ballSimulator-exe/Windows/Ball Simulations.exe
