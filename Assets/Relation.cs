@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets
 {
-    class Relation
+    public class Relation
     {
         private BallType giver; //this relation says  how much force to apply on giver
         private BallType receiver;

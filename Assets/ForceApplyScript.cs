@@ -45,7 +45,6 @@ public class ForceApplyScript : MonoBehaviour
             ballType.Forces.TryGetValue(otherType, out relationOfBalls);
             Vector2 diff=otherBall.transform.position - this.gameObject.transform.position;
             float force=relationOfBalls.interpolateForce(diff.magnitude);
-            Debug.Log(force);
             if(relationOfBalls.Attract)
             {
                 rb.AddForce(diff.normalized* force*Time.deltaTime* Time.timeScale);

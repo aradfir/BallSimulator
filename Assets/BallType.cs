@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 namespace Assets
 {
-    class BallType
+    public class BallType
     {
         private String name;
         private Color color;
