@@ -71,7 +71,9 @@
     <Compile Include="Assets\FlexibleColorPicker\Scripts\FlexibleColorPicker.cs" />
     <Compile Include="Assets\ForceApplyScript.cs" />
     <Compile Include="Assets\Relation.cs" />
+    <Compile Include="Assets\RelationCreator.cs" />
     <Compile Include="Assets\TimescaleChanger.cs" />
+    <Compile Include="Assets\TypeCreator.cs" />
     <None Include="Assets\FlexibleColorPicker\Materials\FCP_Gradient.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

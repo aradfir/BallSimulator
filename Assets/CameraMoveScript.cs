@@ -9,9 +9,17 @@ public class CameraMoveScript : MonoBehaviour
     public float mDelta; // Pixels. The width border at the edge in which the movement work
     Vector3 rightDir = Vector3.right;
     Vector3 upDir = Vector3.up;
+    public static bool enableMovement=false;
     // Update is called once per frame
     void Update()
     {
+        if (!enableMovement)
+            return;
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position =new Vector3(0,0,transform.position.z);
+        }
         if (Input.mousePosition.x >= Screen.width - mDelta)
         {
             // Move the camera

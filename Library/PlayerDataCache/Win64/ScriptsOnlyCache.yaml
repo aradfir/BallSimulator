@@ -6,7 +6,9 @@ ScriptsOnlyBuild:
     - FCP_SpriteMeshEditor
     - FlexibleColorPicker
     - ForceApplyScript
+    - RelationCreator
     - TimescaleChanger
+    - TypeCreator
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -103,6 +105,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14442}
     - Class: 114
       Script: {instanceID: 14444}
+    - Class: 114
+      Script: {instanceID: 49940}
+    - Class: 114
+      Script: {instanceID: 49948}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -328,7 +334,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: cc74c9677c7811988f122fdfadd402cf
+      Hash: e9f54e784451dbd46ae4df31a14c0a05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallSpawner
@@ -590,6 +596,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FCP_ExampleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 4bcee5e8736cc4565539afdd08e8ac06
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TypeCreator
+  - hash:
+      serializedVersion: 2
+      Hash: 204ba2a318dfeca84271f6a0708fdf59
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RelationCreator
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

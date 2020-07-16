@@ -8,7 +8,6 @@ public class TimescaleChanger : MonoBehaviour
     // Start is called before the first frame update
     public void Button_Click()
     {
-        Debug.Log("Yo");
         GameObject text= gameObject.transform.Find("TimeScaleField").gameObject;
         string txt=text.GetComponent<InputField>().text;
         float newScale;

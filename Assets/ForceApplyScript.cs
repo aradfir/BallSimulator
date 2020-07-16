@@ -9,6 +9,7 @@ public class ForceApplyScript : MonoBehaviour
 
     internal BallType BallType { get => ballType; set => ballType = value; }
     Rigidbody2D rb;
+    static List<ForceApplyScript> everyObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,37 +22,41 @@ public class ForceApplyScript : MonoBehaviour
      //   BallType.Forces.Add(BallType, Relation.GetRandomRelation(BallType, BallType, 1500f, 100f));
         GetComponent<SpriteRenderer>().color = ballType.Color;
         transform.localScale *= BallType.Radius*2;
+        if (everyObject == null)
+            everyObject = new List<ForceApplyScript>();
+        everyObject.Add(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        GameObject[] gobj=GameObject.FindGameObjectsWithTag("ball");
-        rb.velocity *= (1 - ballType.FrictionMult)*Time.deltaTime*Time.timeScale;
+        //*Time.deltaTime
+        rb.velocity *= (1 - ballType.FrictionMult)*Time.timeScale;
         //Debug.LogError(gobj.Length);
-        foreach (GameObject otherBall in gobj)
+        foreach (ForceApplyScript script in everyObject)
         {
-            if (otherBall.transform==this.transform)
+            if (script==this)
             {
                 continue;
             }
-            ForceApplyScript script = otherBall.GetComponent<ForceApplyScript>();
+            
             BallType otherType=script.BallType;
            // Debug.Log(otherType.Equals(this.ballType));
             //Debug.Log(otherType.Name);
 
             Relation relationOfBalls;
             
+
             ballType.Forces.TryGetValue(otherType, out relationOfBalls);
-            Vector2 diff=otherBall.transform.position - this.gameObject.transform.position;
+            Vector2 diff=script.gameObject.transform.position - this.gameObject.transform.position;
+            
             float force=relationOfBalls.interpolateForce(diff.magnitude);
             if(relationOfBalls.Attract)
             {
-                rb.AddForce(diff.normalized* force*Time.deltaTime* Time.timeScale);
+                rb.AddForce(diff.normalized* force* Time.timeScale);
             }
             else
             {
-                rb.AddForce(-diff.normalized * force* Time.deltaTime* Time.timeScale);
+                rb.AddForce(-diff.normalized * force* Time.timeScale);
             }
             
         }
